@@ -2,11 +2,15 @@ import T from 'action/type';
 const {FLUSH} = T;
 
 const createReducer = (addReactions, defState = {}) => {
+  const getDefState = () => {
+    if (typeof defState === 'object') return {...defState};
+    return defState;
+  };
   const reactions = {
-    [FLUSH]: () => ({...defState}),
+    [FLUSH]: () => getDefState(),
     ...addReactions,
   };
-  return (state = {...defState}, {type, payload}) => {
+  return (state = getDefState(), {type, payload}) => {
     if (reactions[type]) return reactions[type](state, payload);
     return state;
   };

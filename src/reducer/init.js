@@ -4,8 +4,8 @@ const {FLUSH, INITIALIZE} = T;
 
 const initReducer = createReducer(
   {
-    [FLUSH]() {}, // NOOP
-    [INITIALIZE]: (_, init) => init,
+    [FLUSH]: state => state, // NOOP
+    [INITIALIZE]: () => true,
   },
   false
 );

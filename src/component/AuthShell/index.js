@@ -1,7 +1,4 @@
-import InitShellContainer from './AuthShellContainer';
-
-const {TARGET} = process.env;
-const platform = TARGET || 'web';
-const InitShell = require(`./AuthShell.${platform}`).default;
+import AuthShellContainer from './AuthShellContainer';
+import AuthShell from './AuthShell.web';
 
 export default AuthShellContainer(AuthShell);

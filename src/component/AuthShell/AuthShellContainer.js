@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
 
-const InitShellContainer = connect(({init}) => ({init}));
+const AuthShellContainer = connect(({user}) => ({user}));
 
-export default InitShellContainer;
+export default AuthShellContainer;

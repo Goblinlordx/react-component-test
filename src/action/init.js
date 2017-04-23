@@ -1,9 +1,8 @@
 import T from 'action/type';
 const {INITIALIZE} = T;
 
-const init = payload => ({
+const initApp = () => ({
   type: INITIALIZE,
-  payload,
 });
 
-export {init};
+export {initApp};
